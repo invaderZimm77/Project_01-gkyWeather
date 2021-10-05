@@ -1,6 +1,6 @@
 :root {
   --mainBG: rgb(17, 0, 20);
-  --textLIGTH: rgb(198, 255, 208);
+  --textLIGHT: rgb(198, 255, 208);
   --textMED: #53627c;
   --textDARK: #1e2432;
   --red: #ff1e42;
@@ -15,12 +15,20 @@
   font-weight: normal;
 }
 
+.container {
+  border: 1px solid var(--orange);
+}
+
+h1 {
+  /* border: 1px solid var(--textMED); */
+  text-align: center;
+}
 button {
   cursor: pointer;
 }
 
 input {
-  -webkit-appearance: none;
+  -webkit-appearance: var(--textDARK);
 }
 
 button,
@@ -39,7 +47,7 @@ img {
 
 ul {
   list-style: none;
-  color: var(--textLIGTH);
+  color: var(--textLIGHT);
 }
 
 body {
@@ -51,9 +59,8 @@ body {
 }
 
 .top-banner {
-  color: var(--textLIGTH);
+  color: var(--textLIGHT);
   justify-self: center;
- 
 }
 
 .heading {
@@ -128,4 +135,83 @@ body {
     min-height: 0;
     margin-top: 10px;
   }
+}
+
+.ajax-section {
+  margin: 50px 0 20px;
+}
+
+.ajax-section .cities {
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 1000px) {
+  .ajax-section .cities {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ajax-section .cities {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ajax-section .cities {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.ajax-section .city {
+  position: relative;
+  padding: 40px 10%;
+  border-radius: 20px;
+  background: var(--textLIGHT);
+  color: var(--textMED);
+}
+
+.ajax-section .city::after {
+  content: ’’;
+  width: 90%;
+  height: 50px;
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 20px;
+  background: var(--textLIGHT);
+}
+
+.ajax-section figcaption {
+  margin-top: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ajax-section .city-temp {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: var(--textDARK);
+}
+
+.ajax-section .city sup {
+  font-size: 0.5em;
+}
+
+.ajax-section .city-name sup {
+  padding: 0.2em 0.6em;
+  border-radius: 30px;
+  color: var(--textLIGHT);
+  background: var(--orange);
+}
+
+.ajax-section .city-icon {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
 }

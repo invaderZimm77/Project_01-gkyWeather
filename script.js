@@ -8,8 +8,10 @@
 
 const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+// const form = document.querySelector(".top-banner form");
+const list = document.querySelector(".ajax-section .city-list");
 const button = document.querySelector("#search");
+
 button.addEventListener("click", () => {        // i make the button clicky
     const inputCity = document.getElementById("boxie").value;
     console.log(inputCity);
@@ -19,77 +21,67 @@ button.addEventListener("click", () => {        // i make the button clicky
         console.log(res);
         return res.json();
     })
-    .then((resJSON) => {
+    .then((data) => {
+        const { main, name, sys, weather } = data;
+        // const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+
+        const li = document.createElement("li");
+        li.classList.add("city");
+        const markup = `
+          <h2 class="city-name" data-name="${name},${sys.country}">
+              <span>${name}</span>
+              <sup>${sys.country}</sup>
+          </h2>
+          <div class="city-temp">${Math.round(main.temp)}<sup>°F</sup></div>
+
+        `;
+        li.innerHTML = markup;
+        list.appendChild(li);
+    
         console.log(resJSON);
         dispCityWeather(resJSON);
     })
     .catch((error) => {
-        console.log(`**ERROR**: ${error}`);
-    }); 
+        msg.textContent(`Invalid.\nPlease search for a valid city 😩`);
+    });
 });
 
+// const dispCityWeather = (city2Disp) => {
+//     mainCityDiv.innerHTML = "";
+//     const newCityDiv = document.createElement("div");
+//     newCityDiv.background
 
-const dispCityWeather = (city2Disp) => {
-    mainCityDiv.innerHTML = "";
-    const newCityDiv = document.createElement("div");
+//     const newCityName = document.createElement("h3");
+//     newCityName.innerText = city2Disp.name;
 
-    const newCityName = document.createElement("h3");
-    newCityName.innerText = city2Disp.name;
+//     const newCityCurrentTEMP = document.createElement("h4");
+//     newCityCurrentTEMP.innerText = `Currenty ${city2Disp.main.temp}°f`;
 
-    const newCityCurrentTEMP = document.createElement("h4");
-    newCityCurrentTEMP.innerText = `Currenty ${city2Disp.main.temp}°f`;
-
-    const newCityHumidity = document.createElement("h5");
-    newCityHumidity.innerText = `Humidity : ${city2Disp.main.humidity}%`;
-    console.log(city2Disp.weather);
+//     const newCityHumidity = document.createElement("h5");
+//     newCityHumidity.innerText = `Humidity : ${city2Disp.main.humidity}%`;
+//     console.log(city2Disp.weather);
     
-    newCityDiv.append(newCityName, newCityCurrentTEMP, newCityHumidity);
-    mainCityDiv.appendChild(newCityDiv);
-}
+//     newCityDiv.append(newCityName, newCityCurrentTEMP, newCityHumidity);
+//     mainCityDiv.appendChild(newCityDiv);
+// }
 
-  // takes the element just made and adds it to the bottom of the page.
-  const mainCityDiv = document.createElement("div");
-  mainCityDiv.className = "main-city-div";
-  document.querySelector(".city-list").appendChild(mainCityDiv);
-  
+/* <figure>
+<img class="city-icon" src= {icon} alt= {weather[0]["main"]}>
+<figcaption>${weather[0]["description"]}</figcaption>
+</figure> */
 
-  // {coord: {…}, weather: Array(1), base: 'stations', main: {…}, visibility: 10000, …}
-// base: "stations"
-// clouds: {all: 75}
-// cod: 200
-// coord: {lon: -77.3997, lat: 39.4668}
-// dt: 1633376684
-// id: 4355594
-// main:
-// feels_like: 299.52
-// humidity: 71
-// pressure: 1013
-// temp: 299.52
-// temp_max: 301.93
-// temp_min: 296.89
-// [[Prototype]]: Object
-// name: "Frederick"
-// sys:
-// country: "US"
-// id: 2038516
-// sunrise: 1633345720
-// sunset: 1633387653
-// type: 2
-// [[Prototype]]: Object
-// timezone: -14400
-// visibility: 10000
-// weather: Array(1)
-// 0:
-// description: "broken clouds"
-// icon: "04d"
-// id: 803
-// main: "Clouds"
-// [[Prototype]]: Object
-// length: 1
-// [[Prototype]]: Array(0)
-// wind:
-// deg: 260
-// gust: 0.45
-// speed: 0.45
-// [[Prototype]]: Object
-// [[Prototype]]: Object
+
+
+
+
+
+//   // takes the element just made and adds it to the bottom of the page.
+//   const mainCityDiv = document.createElement("div");
+//   mainCityDiv.className = "main-city-div";
+//   document.querySelector(".city-list").appendChild(mainCityDiv);
+
+
+//   <figure>
+//   <img class="city-icon" src= {icon} alt= {weather[0]["main"]}>
+//   <figcaption>${weather[0]["description"]}</figcaption>
+// </figure>
