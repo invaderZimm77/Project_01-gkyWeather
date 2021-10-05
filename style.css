@@ -1,6 +1,6 @@
 :root {
   --mainBG: rgb(17, 0, 20);
-  --textLIGHT: rgb(198, 255, 208);
+  --textLIGTH: rgb(198, 255, 208);
   --textMED: #53627c;
   --textDARK: #1e2432;
   --red: #ff1e42;
@@ -39,7 +39,7 @@ img {
 
 ul {
   list-style: none;
-  color: var(--textLIGHT);
+  color: var(--textLIGTH);
 }
 
 body {
@@ -51,7 +51,7 @@ body {
 }
 
 .top-banner {
-  color: var(--textLIGHT);
+  color: var(--textLIGTH);
   justify-self: center;
  
 }

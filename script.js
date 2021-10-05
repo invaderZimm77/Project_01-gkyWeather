@@ -1,5 +1,7 @@
 
 //https://swapi.dev/
+// source: used in the premise of a template
+// https://webdesign.tutsplus.com/tutorials/build-a-simple-weather-app-with-vanilla-javascript--cms-33893
 
 //get and store user's location
 // api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}
@@ -12,7 +14,7 @@ button.addEventListener("click", () => {        // i make the button clicky
     const inputCity = document.getElementById("boxie").value;
     console.log(inputCity);
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=${weatherAPIkey}&`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`)
     .then((res) => {
         console.log(res);
         return res.json();
@@ -34,11 +36,14 @@ const dispCityWeather = (city2Disp) => {
     const newCityName = document.createElement("h3");
     newCityName.innerText = city2Disp.name;
 
-    const newCityHumidity = document.createElement("h4");
-    newCityHumidity.innerText = city2Disp.main.humidity;
+    const newCityCurrentTEMP = document.createElement("h4");
+    newCityCurrentTEMP.innerText = `Currenty ${city2Disp.main.temp}°f`;
+
+    const newCityHumidity = document.createElement("h5");
+    newCityHumidity.innerText = `Humidity : ${city2Disp.main.humidity}%`;
     console.log(city2Disp.weather);
     
-    newCityDiv.append(newCityName, newCityHumidity);
+    newCityDiv.append(newCityName, newCityCurrentTEMP, newCityHumidity);
     mainCityDiv.appendChild(newCityDiv);
 }
 
