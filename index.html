@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
     <link rel="stylesheet" href="style.css">
-    <title>Geeky Weather</title>
+   <!-- <style>
+      @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+      </style> -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+      
+    <title>Geeky Weather App</title>
   </head>
   <body>
     <section class="top-banner">
       <div class="container">
-        <h1 class="heading">Geeky Weather App</h1>
+        <h1 class="heading">Geeky Weather</h1>
         <form onsubmit="return false">
           <input type="text" id="boxie" placeholder="Search for a city" autofocus />
           <button id="search" type="search">Search</button>
@@ -20,7 +28,7 @@
     </section>
     <section class="ajax-section">
       <div class="container">
-        <ul class="cities"></ul>
+        <ul class="city-list"></ul>
       </div>
     </section>
   </body>
