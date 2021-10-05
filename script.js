@@ -41,9 +41,15 @@ button.addEventListener("click", () => {        // i make the button clicky
         console.log(resJSON);
         dispCityWeather(resJSON);
     })
-    .catch((error) => {
-        msg.textContent(`Invalid.\nPlease search for a valid city 😩`);
-    });
+
+    .catch(() => {
+       // msg.textContent = "Please search for a valid city 😩";
+      });
+
+
+    // .catch((error) => {
+    //     // window.alert("Please search for a valid city 😩");
+    // });
 });
 
 // const dispCityWeather = (city2Disp) => {
