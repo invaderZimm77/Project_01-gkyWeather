@@ -11,20 +11,17 @@ const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 const list = document.querySelector(".ajax-section .city-list");
 const button = document.querySelector("#search");
 
-button.addEventListener("click", () => {
-  // i make the button clicky
-  const inputCity = document.getElementById("boxie").value;
-  console.log(inputCity);
+button.addEventListener("click", () => {// i make the button clicky
+    const inputCity = document.getElementById("boxie").value;
+    console.log(inputCity);
 
-  const listItems = list.querySelectorAll(".ajax-section .city");
-  const listItemsArray = Array.from(listItems);
+    const listItems = list.querySelectorAll(".ajax-section .city");
+    const listItemsArray = Array.from(listItems);
 
   if (listItemsArray.length > 0) {
     const filteredArray = listItemsArray.filter((el) => {
       let content = "";
-      //athens,gr
       if (inputCity.includes(",")) {
-        //athens,grrrrrr->invalid country code, so we keep only the first part of inputVal
         if (inputCity.split(",")[1].length > 2) {
           inputCity = inputCity.split(",")[0];
           content = el
@@ -34,7 +31,6 @@ button.addEventListener("click", () => {
             content = el.querySelector(".city-name").dataset.name.toLowerCase();
         }
         } else {
-        //athens
         content = el.querySelector(".city-name span").textContent.toLowerCase();
       }
       return content == inputCity.toLowerCase();
@@ -60,39 +56,59 @@ button.addEventListener("click", () => {
       return res.json();
     })
     .then((data) => {
-      const { main, name, sys, weather } = data;
-       const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+        const { main, name, sys, weather } = data;
+        const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+        
+        const GKYplanet = GKYplanetPicker(Math.round(main.temp));
+        // const GKYplanet =["Alderaan", "https://static.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg/revision/latest?cb=20061211013805"];
 
-      const li = document.createElement("li");
-      li.classList.add("city");
-      const markup = `
-          <h2 class="city-name" data-name="${name},${sys.country}">
-              <span>${name}</span>
-              <sup>${sys.country}</sup>
-          </h2>
-          <div class="city-temp">${Math.round(main.temp)}<sup>°F</sup></div>
+        const li = document.createElement("li");
+        li.classList.add("city");
+        const markup = `
+            <h2 class="city-name" data-name="${name},${sys.country}">
+                <span>${name}</span>
+                <sup>${sys.country}</sup>
+            </h2>
+            <div class="city-temp">${Math.round(main.temp)}<sup>°F</sup></div>
 
         <figure>
-        <img class="city-icon" src= ${icon} alt= ${weather[0]["main"]}>
-        <figcaption>${weather[0]["description"]}</figcaption>
+            <img class="city-icon" src= ${icon} alt= ${weather[0]["main"]}>
+            <figcaption>${weather[0]["description"]}\nThe tepmreture is like that of ${GKYplanet[0]}</figcaption>
+            <img class="cityGKYplanet" src=${GKYplanet[1]} alt= "">
         </figure>
 
         `;
       li.innerHTML = markup;
       list.appendChild(li);
-
-      console.log(resJSON);
-      dispCityWeather(resJSON);
     })
 
-    .catch(() => {
-      // msg.textContent = "Please search for a valid city 😩";
-    });
-
-  // .catch((error) => {
-  //     // window.alert("Please search for a valid city 😩");
-  // });
+//   .catch((error) => {
+//       window.alert("Please search for a valid city 😩");
+//   });
 });
+
+
+const GKYplanetPicker=(cityTemp) => {
+    console.log(cityTemp);
+    let newPlanet;
+    
+    if (cityTemp <= 80 && cityTemp >= 52){
+        newPlanet =["Alderaan", "https://static.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg/revision/latest?cb=20061211013805"];
+        return (newPlanet);
+    }
+    else if (cityTemp < 52 ){
+        newPlanet =["Dagobah", "https://static.wikia.nocookie.net/starwars/images/4/48/Dagobah_ep3.jpg/revision/latest?cb=20100122163146"];
+        return (newPlanet);
+    }
+};
+//GET STAR WARS PLANETBASED ON TEMP
+/*
+    if temp is< 75 && >52
+        alderan
+    if tem is 
+*/
+
+
 
 // const dispCityWeather = (city2Disp) => {
 //     mainCityDiv.innerHTML = "";

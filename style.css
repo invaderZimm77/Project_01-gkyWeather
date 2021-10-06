@@ -199,6 +199,14 @@ body {
   height: 100px;
 }
 
+.ajax-section .cityGKYplanet {
+    margin-top: 10px;
+    border-radius: 20px;
+    border: 2px solid var(--DARKred);
+    width: 100px;
+    height: 100px;
+  }
+
 @media screen and (max-width: 1000px) {
     .ajax-section .city-list {
       grid-template-columns: repeat(3, 1fr);
