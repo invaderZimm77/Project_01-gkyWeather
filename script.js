@@ -58,9 +58,7 @@ button.addEventListener("click", () => {// i make the button clicky
     .then((data) => {
         const { main, name, sys, weather } = data;
         const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
-        
         const GKYplanet = GKYplanetPicker(Math.round(main.temp));
-        // const GKYplanet =["Alderaan", "https://static.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg/revision/latest?cb=20061211013805"];
 
         const li = document.createElement("li");
         li.classList.add("city");
@@ -89,15 +87,35 @@ button.addEventListener("click", () => {// i make the button clicky
 
 
 const GKYplanetPicker=(cityTemp) => {
-    console.log(cityTemp);
+    //console.log(cityTemp);
     let newPlanet;
     
-    if (cityTemp <= 80 && cityTemp >= 52){
+    if (cityTemp >= 100){
+        newPlanet=["Mustafar", "https://static.wikia.nocookie.net/starwars/images/a/af/Mustafar_DB.png/revision/latest?cb=20160118061913"];
+        return (newPlanet);
+    }
+    else if (cityTemp < 100 && cityTemp >= 80){
+        newPlanet =["Tatooine","https://upload.wikimedia.org/wikipedia/en/6/6d/Tatooine_%28fictional_desert_planet%29.jpg"];
+        return (newPlanet);
+    }
+    else if (cityTemp < 80 && cityTemp >= 72){
+        newPlanet =["Yavin IV", "https://static.wikia.nocookie.net/starwars/images/d/d4/Yavin-4-SWCT.png/revision/latest?cb=20181015023938"];
+        return (newPlanet);
+    }
+    else if (cityTemp < 72 && cityTemp >= 62){
         newPlanet =["Alderaan", "https://static.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg/revision/latest?cb=20061211013805"];
         return (newPlanet);
     }
-    else if (cityTemp < 52 ){
+    else if (cityTemp < 62 && cityTemp >= 52){
         newPlanet =["Dagobah", "https://static.wikia.nocookie.net/starwars/images/4/48/Dagobah_ep3.jpg/revision/latest?cb=20100122163146"];
+        return (newPlanet);
+    }
+    else if (cityTemp < 52 && cityTemp >= 45){
+        newPlanet =["Kamino", "https://static.wikia.nocookie.net/starwars/images/a/a9/Eaw_Kamino.jpg/revision/latest?cb=20090527045541"];
+        return (newPlanet);
+    }
+    else if (cityTemp < 45){
+        newPlanet =["Hoth","https://static.wikia.nocookie.net/starwars/images/1/1d/Hoth_SWCT.png/revision/latest?cb=20160630022322"];
         return (newPlanet);
     }
 };
