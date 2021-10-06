@@ -91,7 +91,7 @@ const GKYplanetPicker=(cityTemp) => {
     let newPlanet;
     
     if (cityTemp >= 100){
-        newPlanet=["Mustafar", "https://static.wikia.nocookie.net/starwars/images/a/af/Mustafar_DB.png/revision/latest?cb=20160118061913"];
+        newPlanet=["Mustafar", "https://static.wikia.nocookie.net/starwars/images/a/af/Mustafar_DB.png"];
         return (newPlanet);
     }
     else if (cityTemp < 100 && cityTemp >= 80){
@@ -99,23 +99,23 @@ const GKYplanetPicker=(cityTemp) => {
         return (newPlanet);
     }
     else if (cityTemp < 80 && cityTemp >= 72){
-        newPlanet =["Yavin IV", "https://static.wikia.nocookie.net/starwars/images/d/d4/Yavin-4-SWCT.png/revision/latest?cb=20181015023938"];
+        newPlanet =["Yavin IV", "https://static.wikia.nocookie.net/starwars/images/d/d4/Yavin-4-SWCT.png"];
         return (newPlanet);
     }
     else if (cityTemp < 72 && cityTemp >= 62){
-        newPlanet =["Alderaan", "https://static.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg/revision/latest?cb=20061211013805"];
+        newPlanet =["Alderaan", "https://static.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg"];
         return (newPlanet);
     }
     else if (cityTemp < 62 && cityTemp >= 52){
-        newPlanet =["Dagobah", "https://static.wikia.nocookie.net/starwars/images/4/48/Dagobah_ep3.jpg/revision/latest?cb=20100122163146"];
+        newPlanet =["Dagobah", "https://static.wikia.nocookie.net/starwars/images/4/48/Dagobah_ep3.jpg"];
         return (newPlanet);
     }
     else if (cityTemp < 52 && cityTemp >= 45){
-        newPlanet =["Kamino", "https://static.wikia.nocookie.net/starwars/images/a/a9/Eaw_Kamino.jpg/revision/latest?cb=20090527045541"];
+        newPlanet =["Kamino", "https://static.wikia.nocookie.net/starwars/images/a/a9/Eaw_Kamino.jpg"];
         return (newPlanet);
     }
     else if (cityTemp < 45){
-        newPlanet =["Hoth","https://static.wikia.nocookie.net/starwars/images/1/1d/Hoth_SWCT.png/revision/latest?cb=20160630022322"];
+        newPlanet =["Hoth","https://static.wikia.nocookie.net/starwars/images/1/1d/Hoth_SWCT.png"];
         return (newPlanet);
     }
 };
