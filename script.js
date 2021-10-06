@@ -42,7 +42,7 @@ button.addEventListener("click", () => {// i make the button clicky
           filteredArray[0].querySelector(".city-name span").textContent
         } ...otherwise be more specific by providing the country code as well 😉`
       );
-      //form.reset();
+      input.reset();
       input.focus();
       return;
     }
@@ -68,11 +68,13 @@ button.addEventListener("click", () => {// i make the button clicky
                 <sup>${sys.country}</sup>
             </h2>
             <div class="city-temp">${Math.round(main.temp)}<sup>°F</sup></div>
-
         <figure>
-            <img class="city-icon" src= ${icon} alt= ${weather[0]["main"]}>
+            <div class="imgRow">
+                <img class="city-icon" src= ${icon} alt= ${weather[0]["main"]}>
+                <img class="cityGKYplanet" src=${GKYplanet[1]} alt= "">
+            </div>
             <figcaption>${weather[0]["description"]}\nThe tepmreture is like that of ${GKYplanet[0]}</figcaption>
-            <img class="cityGKYplanet" src=${GKYplanet[1]} alt= "">
+            
         </figure>
 
         `;

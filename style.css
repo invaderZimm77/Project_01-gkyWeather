@@ -40,9 +40,11 @@ input {
 }
 
 img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+  display: flex;
+    /* padding: auto; */
+  width: 100%;
+  /* height: auto; */
+  /* border: 1px solid var(--orange); */
 }
 
 ul {
@@ -180,6 +182,12 @@ body {
   font-weight: bold;
   margin-top: 10px;
   color: var(--textDARK);
+}
+.ajax-section .imgRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:space-evenly;
 }
 
 .ajax-section .city sup {
