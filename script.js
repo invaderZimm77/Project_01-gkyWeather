@@ -2,13 +2,12 @@
 // https://webdesign.tutsplus.com/tutorials/build-a-simple-weather-app-with-vanilla-javascript--cms-33893
 // api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}
 //Terra Claycamp
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// const form = document.querySelector(".top-banner form");
 const list = document.querySelector(".ajax-section .city-list");
 const button = document.querySelector("#search");
-//let formCl = document.getElementById("boxie");
+
 
 const boxReset = () =>{
     document.getElementById("boxie").value = "";
@@ -78,7 +77,7 @@ button.addEventListener("click", () => {// i make the button clicky
                 <img class="cityGKYplanet" src=${GKYplanet[1]} alt= "">
             </div>
             <figcaption>${weather[0]["description"]
-            }\nThe temperature is like that of ${GKYplanet[0]}. ${GKYplanet[2]}</figcaption>
+            }\nThe weather is like that of ${GKYplanet[0]}. ${GKYplanet[2]}</figcaption>
             
         </figure>
 
@@ -94,7 +93,7 @@ button.addEventListener("click", () => {// i make the button clicky
 }); //END OF CLICKY BUTTON
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const GKYplanetPicker = (cityTemp, cityHumidity) => {
-  console.log(cityTemp, cityHumidity);
+//   console.log(cityTemp, cityHumidity);
   const desertThresh = 45;
   let newPlanet = [];
 
