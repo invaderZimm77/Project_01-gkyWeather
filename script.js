@@ -10,6 +10,7 @@ const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 // const form = document.querySelector(".top-banner form");
 const list = document.querySelector(".ajax-section .city-list");
 const button = document.querySelector("#search");
+let formCl = document.getElementById("boxie");
 
 button.addEventListener("click", () => {// i make the button clicky
     const inputCity = document.getElementById("boxie").value;
@@ -31,28 +32,28 @@ button.addEventListener("click", () => {// i make the button clicky
             content = el.querySelector(".city-name").dataset.name.toLowerCase();
         }
         } else {
-        content = el.querySelector(".city-name span").textContent.toLowerCase();
+            content = el.querySelector(".city-name span").textContent.toLowerCase();
       }
       return content == inputCity.toLowerCase();
     });
 
     if (filteredArray.length > 0) {
-      alert(
-        `You already know the weather for ${
-          filteredArray[0].querySelector(".city-name span").textContent
-        } ...otherwise be more specific by providing the country code as well 😉`
-      );
-      input.reset();
+      alert(`You already know the weather for ${filteredArray[0].querySelector(".city-name span").textContent} 
+      ...otherwise please be more specific by providing the country code as well 😉`);
+
+      
+      formCl.innerText = "";
       input.focus();
+
       return;
     }
   }
 
-  fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`
-  )
+    fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`
+    )
     .then((res) => {
-      console.log(res);
+    //   console.log(res);
       return res.json();
     })
     .then((data) => {
@@ -80,12 +81,15 @@ button.addEventListener("click", () => {// i make the button clicky
         `;
       li.innerHTML = markup;
       list.appendChild(li);
+
+      document.getElementById("boxie").value = "";
+      document.getElementById("boxie").focus();
     })
 
 //   .catch((error) => {
 //       window.alert("Please search for a valid city 😩");
 //   });
-});
+});//END OF CLICKY BUTTON
 
 
 const GKYplanetPicker=(cityTemp) => {
@@ -121,6 +125,11 @@ const GKYplanetPicker=(cityTemp) => {
         return (newPlanet);
     }
 };
+
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 //GET STAR WARS PLANETBASED ON TEMP
 /*
     if temp is< 75 && >52
