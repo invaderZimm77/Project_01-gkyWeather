@@ -2,17 +2,19 @@
 // https://webdesign.tutsplus.com/tutorials/build-a-simple-weather-app-with-vanilla-javascript--cms-33893
 // api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}
 //Terra Claycamp
+//Oct-7-2021
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 const list = document.querySelector(".ajax-section .city-list");
 const button = document.querySelector("#search");
 
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const boxReset = () =>{
     document.getElementById("boxie").value = "";
     document.getElementById("boxie").focus();
 }
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 button.addEventListener("click", () => {// i make the button clicky
   const inputCity = document.getElementById("boxie").value;
@@ -52,7 +54,7 @@ button.addEventListener("click", () => {// i make the button clicky
     `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`
   )
     .then((res) => {
-      //   console.log(res);
+        console.log(res);
       return res.json();
     })
     .then((data) => {
@@ -91,9 +93,9 @@ button.addEventListener("click", () => {// i make the button clicky
         window.alert("Please search for a valid city 😩");
     });
 }); //END OF CLICKY BUTTON
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const GKYplanetPicker = (cityTemp, cityHumidity) => {
-//   console.log(cityTemp, cityHumidity);
   const desertThresh = 45;
   let newPlanet = [];
 
@@ -171,46 +173,3 @@ const GKYplanetPicker = (cityTemp, cityHumidity) => {
 };
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-//CODE GRAVEYARD
-//GET STAR WARS PLANETBASED ON TEMP
-
-// newPlanet = [
-//     "",
-//     "",
-// ];
-/*
-    if temp is< 75 && >52
-        alderan
-    if tem is
-*/
-
-// const dispCityWeather = (city2Disp) => {
-//     mainCityDiv.innerHTML = "";
-//     const newCityDiv = document.createElement("div");
-//     newCityDiv.background
-
-//     const newCityName = document.createElement("h3");
-//     newCityName.innerText = city2Disp.name;
-
-//     const newCityCurrentTEMP = document.createElement("h4");
-//     newCityCurrentTEMP.innerText = `Currenty ${city2Disp.main.temp}°f`;
-
-//     const newCityHumidity = document.createElement("h5");
-//     newCityHumidity.innerText = `Humidity : ${city2Disp.main.humidity}%`;
-//     console.log(city2Disp.weather);
-
-//     newCityDiv.append(newCityName, newCityCurrentTEMP, newCityHumidity);
-//     mainCityDiv.appendChild(newCityDiv);
-// }
-
-//   // takes the element just made and adds it to the bottom of the page.
-//   const mainCityDiv = document.createElement("div");
-//   mainCityDiv.className = "main-city-div";
-//   document.querySelector(".city-list").appendChild(mainCityDiv);
-
-//   <figure>
-//   <img class="city-icon" src= {icon} alt= {weather[0]["main"]}>
-//   <figcaption>${weather[0]["description"]}</figcaption>
-// </figure>
