@@ -1,9 +1,7 @@
-//https://swapi.dev/
 // source: used in the premise of a template
 // https://webdesign.tutsplus.com/tutorials/build-a-simple-weather-app-with-vanilla-javascript--cms-33893
-
-//get and store user's location
 // api.openweathermap.org/data/2.5/weather?q={city name},{state code},{country code}&appid={API key}
+//Terra Claycamp
 
 const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -12,6 +10,11 @@ const list = document.querySelector(".ajax-section .city-list");
 const button = document.querySelector("#search");
 //let formCl = document.getElementById("boxie");
 
+const boxReset = () =>{
+    document.getElementById("boxie").value = "";
+    document.getElementById("boxie").focus();
+}
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 button.addEventListener("click", () => {// i make the button clicky
   const inputCity = document.getElementById("boxie").value;
   console.log(inputCity);
@@ -41,10 +44,7 @@ button.addEventListener("click", () => {// i make the button clicky
       alert(`You already know the weather for ${
         filteredArray[0].querySelector(".city-name span").textContent
         }...otherwise please be more specific by providing the country code as well 😉`);
-
-      formCl.innerText = "";
-      input.focus();
-
+        boxReset();
       return;
     }
   }
@@ -62,7 +62,7 @@ button.addEventListener("click", () => {// i make the button clicky
       const GKYplanet = GKYplanetPicker(
         Math.round(main.temp),
         Math.round(main.humidity)
-      );
+        );
 
       const li = document.createElement("li");
       li.classList.add("city");
@@ -77,8 +77,7 @@ button.addEventListener("click", () => {// i make the button clicky
                 <img class="city-icon" src= ${icon} alt= ${weather[0]["main"]}>
                 <img class="cityGKYplanet" src=${GKYplanet[1]} alt= "">
             </div>
-            <figcaption>${
-              weather[0]["description"]
+            <figcaption>${weather[0]["description"]
             }\nThe temperature is like that of ${GKYplanet[0]}. ${GKYplanet[2]}</figcaption>
             
         </figure>
@@ -86,15 +85,14 @@ button.addEventListener("click", () => {// i make the button clicky
         `;
       li.innerHTML = markup;
       list.appendChild(li);
-      document.getElementById("boxie").value = "";
-      document.getElementById("boxie").focus();
+      boxReset();
     })
 
     .catch(() => {
         window.alert("Please search for a valid city 😩");
     });
 }); //END OF CLICKY BUTTON
-
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const GKYplanetPicker = (cityTemp, cityHumidity) => {
   console.log(cityTemp, cityHumidity);
   const desertThresh = 45;
@@ -123,7 +121,7 @@ const GKYplanetPicker = (cityTemp, cityHumidity) => {
     if (cityHumidity > desertThresh) {
       newPlanet = [
         "Yavin IV",
-        "https://static.wikia.nocookie.net/starwars/images/d/d4/Yavin-4-SWCT.png","Should be nice out"
+        "https://static.wikia.nocookie.net/starwars/images/d/d4/Yavin-4-SWCT.png","Should be nice out... Enjoy!"
       ];
     } else {
       newPlanet = [
