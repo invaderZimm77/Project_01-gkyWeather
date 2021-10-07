@@ -109,7 +109,7 @@ const GKYplanetPicker = (cityTemp, cityHumidity) => {
     if (cityHumidity < desertThresh) {
       newPlanet = [
         "Tatooine",
-        "https://static.wikia.nocookie.net/starwars/images/b/b0/Tatooine_TPM.png", "Probably need some sunscreen"
+        "https://static.wikia.nocookie.net/starwars/images/b/b0/Tatooine_TPM.png", "Wear some sunscreen."
       ];
     } else {
       newPlanet = [
@@ -134,7 +134,7 @@ const GKYplanetPicker = (cityTemp, cityHumidity) => {
   } else if (cityTemp < 72 && cityTemp >= 62) {
     newPlanet = [
       "Alderaan",
-      "https://static.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg","May get explodey today. Enjoy the the weather whlile it last."
+      "https://static.wikia.nocookie.net/starwars/images/4/4a/Alderaan.jpg","May get explodey today. Enjoy the the weather while it last."
     ];
     return newPlanet;
   } else if (cityTemp < 62 && cityTemp >= 52) {
