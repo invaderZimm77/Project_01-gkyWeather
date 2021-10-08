@@ -3,7 +3,9 @@
 
 App Title: Geeky Weather
 
-App Description:Takes input ang gives visual feed back of the requested city's current weather and a geeky planet that has similar weather and gives a quip
+App Description: Takes input ang gives visual feed back of the requested city's current weather and a geeky planet that has similar weather and gives a quip
+
+link to project: https://invaderzimm77.github.io/Project_01-gkyWeather/
 
 API: https://openweathermap.org/api
     varies weather values 
@@ -59,13 +61,12 @@ Wireframes: https://whimsical.com/starwars-app-YEdHW1cMkBckeT8WUzmotn@2Ux7TurymN
 MVP: takes user input 
     returns current weather based on input
     returns a geeky planet reference based on the current temp
-    able to have multipule cities
+    able to have multipule city tiles
+
 
 Post-MVP: instead return a geeky planet based on current temp and humidity.
         give a quip about the weather
         based on crosscompare from starwars api
-        quip based on current weather condition
-
 Goals:
         MVP  10/6 was really only deadline i gave myself
 
