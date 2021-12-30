@@ -5,12 +5,14 @@ App Title: Geeky Weather
 
 App Description: Takes input ang gives visual feed back of the requested city's current weather and a geeky planet that has similar weather and gives a quip
 
-link to project: https://invaderzimm77.github.io/Project_01-gkyWeather/
+Link to deployied site: https://invaderzimm77.github.io/Project_01-gkyWeather/
 
-API: https://openweathermap.org/api
-    varies weather values 
+API used: https://openweathermap.org/api
 
-API Snippet:{
+
+API Snippet:
+   ```
+   {
     "coord": {
         "lon": -77.3997,
         "lat": 39.4668
@@ -54,7 +56,7 @@ API Snippet:{
     "name": "Frederick",
     "cod": 200
 }
-
+```
 Wireframes: https://whimsical.com/starwars-app-YEdHW1cMkBckeT8WUzmotn@2Ux7TurymN8kYUSbEJLp
 
 
