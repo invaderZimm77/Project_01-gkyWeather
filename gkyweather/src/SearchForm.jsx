@@ -1,12 +1,12 @@
-import React from 'react'
-
+import SearchButton from "./SearchButton";
 
 export default function SearchForm() {
   return (
-	<form className='search-form'>
-		<input type="text" id="boxie" placeholder="Search for a city" autofocus />
-          <button id="search" type="search">Search</button>
-          <span className="msg"></span>
-	</form>
-  )
+    <form className="search-form" onSubmit="">
+      <input type="text" id="searchBox" placeholder="Search for a city" />
+
+      <SearchButton />
+      <span className="msg"></span>
+    </form>
+  );
 }
