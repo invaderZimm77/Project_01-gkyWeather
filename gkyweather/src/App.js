@@ -4,13 +4,11 @@ import SearchForm from './SearchForm.jsx';
 import ListOfCitys from './ListOfCitys';
 /*
 
-
-App-div
-title-comp
-search form
-    search field
-UList of retrieved cities
-
+const { main, name, sys, weather } = data;
+      const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+      const GKYplanet = GKYplanetPicker(
+        Math.round(main.temp),
+        Math.round(main.humidity)
 
 
 */
