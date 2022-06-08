@@ -42,9 +42,10 @@ CityTile.defaultProps = {
   country: "US",
   temp: null,
   currentCondition: "ᚢᚣᚤᚥ ᚨᚩᚪᚫᚬᚭᚮᚯ",
-  weatherIcon: "Weather ICON",
+  weatherIcon: "https://openweathermap.org/img/wn/04d@2x.png",
   gkyPlanetName: "planet planet face",
-  gkyPlanetImg: "mmmmmmmm Planetie",
+  gkyPlanetImg:
+    "https://insidethemagic.net/wp-content/uploads/2019/01/Avatar-Flight-of-Passage-Scene-E-2-800x400.jpg",
   gkyPlanetQuip: "im a quip. puip puip psjfg djlghudi jfghfufhfsddfsdui",
 };
 export default CityTile;
