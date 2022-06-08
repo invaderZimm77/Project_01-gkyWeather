@@ -2,21 +2,17 @@
 import './App.css';
 import SearchForm from './SearchForm.jsx';
 import ListOfCitys from './ListOfCitys';
-/*
+import CityTile from './CityTile';
 
-const { main, name, sys, weather } = data;
-      const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
-      const GKYplanet = GKYplanetPicker(
-        Math.round(main.temp),
-        Math.round(main.humidity)
-
-
-*/
 function App() {
+
+  // let ListOfCitys = [];
+
   return (
     <div className="App">
       <h1 className="heading">Geeky Weather</h1>
       <SearchForm/>
+      <CityTile/>
       <br/>
       <ListOfCitys/>
     </div>

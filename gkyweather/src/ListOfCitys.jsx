@@ -1,9 +1,12 @@
 import CityTile from "./CityTile"
 
-export default function ListOfCitys() {
+import React from 'react'
+
+const ListOfCitys = () => {
   return (
-	<div className="list-of-cities">
-	<CityTile/>
-	</div>
-  )
-}
+	<div>
+	<CityTile />
+	</div>)
+};
+
+export default ListOfCitys
