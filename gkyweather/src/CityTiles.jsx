@@ -8,14 +8,15 @@ const CityTiles = (props) => {
     cityName={CityTile.cityName}
     country={CityTile.country}
     temp={CityTile.temp}
+    currentCondition={CityTile.currentCondition}
     weatherIcon={CityTile.weatherIcon}
     gkyPlanetName={CityTile.gkyPlanetName}
-    gkyPlanetImg={CityTile.gkyPlanet}
-    gkyPlanetQuip={CityTile.gkyQuip}
-    // key={index}
+    gkyPlanetImg={CityTile.gkyPlanetImg}
+    gkyPlanetQuip={CityTile.gkyPlanetQuip}
   />;
 
   return <div className="city-tiles">CityTiles</div>;
 };
 
 export default CityTiles;
+
