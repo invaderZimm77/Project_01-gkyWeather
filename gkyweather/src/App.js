@@ -1,7 +1,6 @@
 import "./App.css";
 import SearchForm from "./SearchForm.jsx";
 import ListOfCitys from "./ListOfCitys";
-import CityTile from "./CityTile";
 
 function App() {
   // let ListOfCitys = [];
@@ -13,8 +12,7 @@ function App() {
 
       <br />
       <ListOfCitys />
-      <CityTile />
-      <CityTile cityName= 'Totot'/>
+      
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import CityTile from "./CityTile";
 
 const CityTiles = (props) => {
@@ -19,4 +19,3 @@ const CityTiles = (props) => {
 };
 
 export default CityTiles;
-

@@ -11,9 +11,6 @@
 .city-tile{
 	border-color: #ff1e42;
 	border-style: solid;
-}
-
-.city-tile {
 	position: relative;
 	padding: 40px 10%;
 	border-radius: 20px;
@@ -22,7 +19,7 @@
 	color: var(--textMED);
 }
 
-.city::after {
+.city-tile::after {
 	content: ’’;
 	width: 90%;
 	height: 50px;
@@ -48,14 +45,14 @@ figcaption {
 	color: var(--textDARK);
 }
 
-.imgRow {
+.img-Row {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-evenly;
 }
 
-.city sup {
+.city-temp sup {
 	font-size: 0.5em;
 }
 

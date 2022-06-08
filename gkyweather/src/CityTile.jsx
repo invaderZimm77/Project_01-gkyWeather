@@ -15,7 +15,7 @@ const CityTile = (props) => {
       </div>
 
       <figure>
-        <div className="imgRow">
+        <div className="img-Row">
           <img
             className="city-icon"
             src={props.weatherIcon}
@@ -28,8 +28,9 @@ const CityTile = (props) => {
           />
         </div>
         <figcaption>
-          {props.currentCondition}{"\n"} The weather is like that of the planet {" "}
-          {props.gkyPlanetName}. {props.gkyPlanetQuip}
+          {props.currentCondition}
+          {"\n"} The weather is like that of the planet {props.gkyPlanetName}.{" "}
+          {props.gkyPlanetQuip}
         </figcaption>
       </figure>
     </div>
