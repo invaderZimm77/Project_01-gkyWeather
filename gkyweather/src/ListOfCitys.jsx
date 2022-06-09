@@ -4,11 +4,11 @@ import React from 'react'
 
 const ListOfCitys = () => {
   return (
-    <div>
+    <section className="list-of-cities">
       <CityTile />
       <CityTile cityName="Popo" country="JP" />
       <CityTile cityName="Totot" />
-    </div>
+    </section>
   );
 };
 
