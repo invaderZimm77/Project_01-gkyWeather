@@ -9,6 +9,7 @@ const ListOfCitys = () => {
       <CityTile />
       <CityTile cityName="Popo" country="JP" />
       <CityTile cityName="Totot" />
+      <CityTile cityName="London" country="UK" />
     </section>
   );
 };

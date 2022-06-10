@@ -15,18 +15,18 @@ const CityTile = (props) => {
       </div>
 
       <figure>
-        <div className="img-Row">
+        <section className="img-Row">
           <img
-            className="city-icon"
+            className="city-weather-icon"
             src={props.weatherIcon}
             alt="Icon Not Found"
           />
           <img
-            className="city-GKYplanet"
+            className="gky-planet-img"
             src={props.gkyPlanetImg}
             alt="Planet Not Found"
           />
-        </div>
+        </section>
         <figcaption>
           {props.currentCondition}
           {"\n"} The weather is like that of the planet {props.gkyPlanetName}.{" "}
@@ -46,7 +46,7 @@ CityTile.defaultProps = {
   weatherIcon: "https://openweathermap.org/img/wn/04d@2x.png",
   gkyPlanetName: "planet planet face",
   gkyPlanetImg:
-    "https://insidethemagic.net/wp-content/uploads/2019/01/Avatar-Flight-of-Passage-Scene-E-2-800x400.jpg",
+    "https://media.istockphoto.com/vectors/not-found-page-404-error-file-not-found-vector-id1139665574",
   gkyPlanetQuip: "im a quip. puip puip psjfg djlghudi jfghfufhfsddfsdui",
 };
 export default CityTile;

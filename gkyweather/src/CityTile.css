@@ -55,13 +55,13 @@ figcaption {
 	background: var(--orange);
 }
 
-.city-icon {
+.city-weather-icon {
 	margin-top: 10px;
 	width: 100px;
 	height: 100px;
 }
 
-.city-GKYplanet {
+.gky-planet-img {
 	margin-top: 10px;
 	border-radius: 20px;
 	border: 2px solid var(--DARKred);

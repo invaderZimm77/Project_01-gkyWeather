@@ -1,5 +1,7 @@
 import SearchButton from "./SearchButton";
 
+import "./SearchForm.css"
+
 export default function SearchForm() {
   return (
     <form className="search-form" onSubmit={SearchButton}>
