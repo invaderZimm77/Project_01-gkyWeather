@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-  padding: 30px;
-  background-color: #1b1c1d;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
   color: white;
 }
@@ -49,18 +47,19 @@ body {
 
 
 .list-of-cities {
-  margin: 50px 5 20px;
+  margin: 30px 5 20px;
   display: grid;
   grid-gap: 32px 20px;
   grid-template-columns: repeat(4, 4fr);
 }
 
-.top-banner {
+.search-form {
   color: var(--textLIGHT);
   justify-self: center;
 }
 
 .heading {
+  color: var(--textLIGHT) ;
   font-family: "Righteous";
   font-size: 4rem;
   justify-self: center;
@@ -69,7 +68,15 @@ body {
   padding: 0 0 30px 0;
 }
 
+.list-of-cities {
+  margin: 50px 0 20px;
+}
 
+.list-of-cities {
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
 
 
 
@@ -112,21 +119,21 @@ body {
     margin-top: 20px;
   }
 
-  .top-banner form {
+  .search-form form {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .top-banner form input,
-  .top-banner form button {
+  .search-form form input,
+  .search-form form button {
     width: 100%;
   }
 
-  .top-banner form button {
+  .search-form form button {
     margin: 20px 0 0 0;
   }
 
-  .top-banner form .msg {
+  .search-form form .msg {
     position: static;
     max-width: none;
     min-height: 0;
@@ -135,6 +142,28 @@ body {
 
     .list-of-cities {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .search-form form {
+    flex-direction: column;
+    justify-self: center;
+  }
+
+  .search-form form input,
+  .search-form form button {
+    width: 100%;
+  }
+
+  .search-form form button {
+    margin: 20px 0 0 0;
+  }
+
+  .search-form form .msg {
+    max-width: none;
+    min-height: 0;
+    margin-top: 10px;
   }
 }
 

@@ -1,7 +1,5 @@
-
-
 .city-tile{
-	border-color: #ff1e42;
+	border-color: var(--red);
 	border-style: solid;
 	position: relative;
 	padding: 40px 10%;
