@@ -6,16 +6,16 @@ const CityTile = (props) => {
     <div className="city-tile">
       <h2 className="city-name">
         <span>{props.cityName}</span>
-        <sup>{props.country}</sup>
+        <sup className="city-country">{props.country}</sup>
       </h2>
 
       <div className="city-temp">
         {Math.round(props.temp ?? 0)}
-        <sup>°F</sup>
+        <sup className="city-temp-unit">°F</sup>
       </div>
 
       <figure>
-        <section className="img-Row">
+        <section className="img-row">
           <img
             className="city-weather-icon"
             src={props.weatherIcon}

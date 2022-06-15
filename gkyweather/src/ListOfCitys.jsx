@@ -7,9 +7,9 @@ const ListOfCitys = () => {
   return (
     <section className="list-of-cities">
       <CityTile />
-      <CityTile cityName="Popo" country="JP" />
+      <CityTile cityName="Popo" country="JP" temp="120"/>
       <CityTile cityName="Totot" />
-      <CityTile cityName="London" country="UK" />
+      <CityTile cityName="London" country="UK" temp="20"/>
     </section>
   );
 };
