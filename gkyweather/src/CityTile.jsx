@@ -1,6 +1,26 @@
 // receives input city
 import "./CityTile.css";
 
+
+// setTile
+let inputCity ="Pittsburgh"
+const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
+
+fetch(
+  `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`
+)
+  .then((res) => {
+    console.log(res);
+    return res.json();
+  })
+  .then((data) => {
+    const { main, name, sys, weather } = data;
+    const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
+   
+   //add to list of cities
+  });
+
+
 const CityTile = (props) => {
   return (
     <div className="city-tile">
@@ -8,10 +28,14 @@ const CityTile = (props) => {
         <span>{props.cityName}</span>
         <sup className="city-country">{props.country}</sup>
       </h2>
-
       <div className="city-temp">
         {Math.round(props.temp ?? 0)}
         <sup className="city-temp-unit">°F</sup>
+      </div>
+      <div className="city-humidity">
+        {" "}
+        Humidity: {Math.round(props.humidity ?? 0)}
+        <sup className="city-temp-unit">%</sup>
       </div>
 
       <figure>
@@ -38,10 +62,10 @@ const CityTile = (props) => {
 };
 
 CityTile.defaultProps = {
-  _id: null,
   cityName: "Im a city",
   country: "US",
   temp: null,
+  humidity: null,
   currentCondition: "ᚢᚣᚤᚥ ᚨᚩᚪᚫᚬᚭᚮᚯ",
   weatherIcon: "https://openweathermap.org/img/wn/04d@2x.png",
   gkyPlanetName: "planet planet face",
