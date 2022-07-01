@@ -23,7 +23,7 @@ button.addEventListener("click", () => {// i make the button clicky
 
   const listItems = list.querySelectorAll(".ajax-section .city");
   const listItemsArray = Array.from(listItems);
-
+// if there is more than one item in the array of cities it will search through to make sure query isn't already in there
   if (listItemsArray.length > 0) {
     const filteredArray = listItemsArray.filter((el) => {
       let content = "";
