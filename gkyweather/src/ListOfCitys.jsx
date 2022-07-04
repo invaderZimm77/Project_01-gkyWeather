@@ -6,9 +6,6 @@ const ListOfCitys = () => {
   return (
     <section className="list-of-cities">
       <CityTile />
-      <CityTile cityName="Popo" country="JP" temp="120" />
-      <CityTile cityName="Totot" humidity="100" />
-      <CityTile cityName="London" country="UK" temp="20" />
     </section>
   );
 };

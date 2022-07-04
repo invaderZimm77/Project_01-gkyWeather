@@ -8,10 +8,9 @@ function App() {
   return (
     <div className="App">
       <h1 className="heading">Geeky Weather</h1>
-      <section className="top-banner">
+      <section className="search">
         <SearchForm />
       </section>
-
       <br />
       <ListOfCitys />
     </div>
