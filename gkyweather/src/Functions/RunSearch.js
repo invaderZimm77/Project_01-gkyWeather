@@ -1,10 +1,13 @@
-import { useState } from "react";
+/*
+
 import CityTile from "../Components/CityTile";
 import React from "react";
 import GKYplanetPicker from "./GKYplanetPicker";
-const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 
-function RunSearch(inputCity) {
+const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
+export const RunSearch = (cityList, inputCity) => {
+  let newCity;
+
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`
   )
@@ -21,31 +24,34 @@ function RunSearch(inputCity) {
         Math.round(main.temp),
         Math.round(main.humidity)
       );
-
-      <CityTile
-        cityName={name}
-        country={sys.country}
-        temp={main.temp}
-        humidity={main.humidity}
-        currentCondition={weather[0]["description"]}
-        weatherIcon={icon}
-        gkyPlanetName={GKYplanet[0]}
-        gkyPlanetImg={GKYplanet[1]}
-        gkyPlanetQuip={GKYplanet[2]}
-      />;
+      newCity = (
+        <CityTile
+          cityName={name}
+          country={sys.country}
+          temp={main.temp}
+          humidity={main.humidity}
+          currentCondition={weather[0]["description"]}
+          weatherIcon={icon}
+          gkyPlanetName={GKYplanet[0]}
+          gkyPlanetImg={GKYplanet[1]}
+          gkyPlanetQuip={GKYplanet[2]}
+        />
+      );
     })
 
     .catch(() => {
       window.alert("Please search for a valid city 😩");
     });
-}
 
+  return newCity;
+};
 
-
-  //verifying that the query isn't already in the list of city
-  //retrieve valid city's data.
-  //use data to determine geeky Planet to associate with givin city
-  //add retrieved city to listOfCitys.
-  //reset form
-  //else
-  //alert user that its not a valid city
+// export default RunSearch();
+//verifying that the query isn't already in the list of city
+//retrieve valid city's data.
+//use data to determine geeky Planet to associate with givin city
+//add retrieved city to listOfCitys.
+//reset form
+//else
+//alert user that its not a valid city
+*/

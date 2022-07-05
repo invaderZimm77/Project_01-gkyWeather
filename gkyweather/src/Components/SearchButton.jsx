@@ -1,13 +1,7 @@
-import RunSearch from "../Functions/RunSearch"
 
-
-export default function SearchButton(props) {
-
+export default function SearchButton(handleSearch) {
   return (
-    <button
-      className="search-button"
-      onClick={() => RunSearch(props.inputCity)}
-    >
+    <button className="search-button" onClick={handleSearch}>
       Search
     </button>
   );
