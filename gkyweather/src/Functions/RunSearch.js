@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState } from "react";
 import CityTile from "../Components/CityTile";
 import React from "react";
-import GKYplanetPicker from "./GKYplanetPicker"
+import GKYplanetPicker from "./GKYplanetPicker";
 const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 
 function RunSearch(inputCity) {
@@ -39,3 +39,13 @@ function RunSearch(inputCity) {
       window.alert("Please search for a valid city 😩");
     });
 }
+
+
+
+  //verifying that the query isn't already in the list of city
+  //retrieve valid city's data.
+  //use data to determine geeky Planet to associate with givin city
+  //add retrieved city to listOfCitys.
+  //reset form
+  //else
+  //alert user that its not a valid city
