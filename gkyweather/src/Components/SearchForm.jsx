@@ -1,5 +1,5 @@
 import SearchButton from "./SearchButton";
-import "./SearchForm.css";
+import "../SearchForm.css";
 import { useState } from "react";
 
 export default function SearchForm() {

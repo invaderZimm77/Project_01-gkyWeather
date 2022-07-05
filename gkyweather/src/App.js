@@ -1,9 +1,9 @@
 import "./App.css";
-import SearchForm from "./SearchForm.jsx";
-import ListOfCitys from "./ListOfCitys";
+import SearchForm from "./Components/SearchForm.jsx";
+import ListOfCitys from "./Components/ListOfCitys";
 
 function App() {
-  // let ListOfCitys = [];
+   let cities = [];
 
   return (
     <div className="App">
@@ -12,7 +12,8 @@ function App() {
         <SearchForm />
       </section>
       <br />
-      <ListOfCitys />
+      <ListOfCitys
+       />
     </div>
   );
 }

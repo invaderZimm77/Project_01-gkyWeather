@@ -1,7 +1,6 @@
-import GKYplanetPicker from "./Functions/GKYplanetPicker";
-import ListOfCitys from "./ListOfCitys";
+import GKYplanetPicker from "../Functions/GKYplanetPicker";
 import CityTile from "./CityTile";
-import SearchForm from "./SearchForm";
+
 
 const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
 

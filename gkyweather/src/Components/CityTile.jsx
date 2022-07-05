@@ -1,5 +1,5 @@
 // receives input city
-import "./CityTile.css";
+import "../CityTile.css";
 
 const CityTile = (props) => {
   return (
