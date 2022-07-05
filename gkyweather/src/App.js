@@ -1,9 +1,10 @@
 import "./App.css";
 import SearchForm from "./Components/SearchForm.jsx";
 import ListOfCitys from "./Components/ListOfCitys";
+import { useState } from "react";
 
 function App() {
-   let cities = [];
+  const [cityList, setCityList] = useState([]);
 
   return (
     <div className="App">
@@ -12,8 +13,7 @@ function App() {
         <SearchForm />
       </section>
       <br />
-      <ListOfCitys
-       />
+      <ListOfCitys cityList/>
     </div>
   );
 }
