@@ -1,9 +1,9 @@
+import React, { useState } from "react";
 import SearchButton from "./SearchButton";
 import "../SearchForm.css";
-import { useState } from "react";
-import  RunSearch  from "../App";
+import RunSearch from "../App";
 
-export default function SearchForm({cityList}) {
+const SearchForm = ( ) => {
   const [inputSearchBox, setInputSearchBox] = useState(null);
 
   const handleChange = (event) => {
@@ -12,12 +12,11 @@ export default function SearchForm({cityList}) {
   };
 
   const handleSearch = () => {
-    console.log(cityList, inputSearchBox);
-    const newCity= RunSearch(cityList, inputSearchBox);
-    cityList.push(newCity)
     
-  }
+    console.log( inputSearchBox);
+    const newCity = RunSearch(inputSearchBox);
 
+  };
 
   return (
     <form className="search-form">
@@ -27,8 +26,9 @@ export default function SearchForm({cityList}) {
         onChange={handleChange}
         placeholder="Search for a city"
       />
-      <SearchButton onClick={handleSearch} />
-      {/* <span className="msg"></span> */}
+      <SearchButton handleSearch={handleSearch} />
     </form>
   );
 }
+
+export default SearchForm

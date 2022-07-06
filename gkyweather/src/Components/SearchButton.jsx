@@ -1,7 +1,9 @@
-
-export default function SearchButton(handleSearch) {
+export default function SearchButton({ handleSearch }) {
   return (
-    <button className="search-button" onClick={handleSearch}>
+    <button className="search-button" onClick={() => {
+      console.log('...Searching...')
+      handleSearch()
+    }}>
       Search
     </button>
   );

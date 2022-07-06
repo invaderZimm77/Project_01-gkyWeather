@@ -4,14 +4,13 @@ import ListOfCitys from "./Components/ListOfCitys";
 import { useState } from "react";
 import CityTile from "./Components/CityTile";
 //import { RunSearch } from "./Functions/RunSearch";
-import GKYplanetPicker from "./Functions/GKYplanetPicker"
+import GKYplanetPicker from "./Functions/GKYplanetPicker";
 
 function App() {
-  const [cityList, setCityList] = useState([]);
-
+  const [cityList, setCityList] = useState([<CityTile/>]);
 
   const weatherAPIkey = "5d578c737ce21d8b0f9dd6879574a1b6";
-  
+
   const RunSearch = (cityList, inputCity) => {
     let newCity;
 
@@ -19,6 +18,7 @@ function App() {
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`
     )
       .then((res) => {
+
         alert(res);
         console.log(res);
         return res.json();
@@ -45,12 +45,10 @@ function App() {
           />
         );
       })
-
       .catch(() => {
         window.alert("Please search for a valid city 😩");
       });
-
-    return newCity;
+    setCityList([...cityList, newCity]);
   };
 
   // RunSearch(cityList, 'athens')
@@ -58,7 +56,7 @@ function App() {
     <div className="App">
       <h1 className="heading">Geeky Weather</h1>
       <section className="search">
-        <SearchForm citylist={cityList} />
+        <SearchForm />
       </section>
       <br />
       <ListOfCitys cityList={cityList} />
