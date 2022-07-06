@@ -1,6 +1,6 @@
 import "./App.css";
 import SearchForm from "./Components/SearchForm.jsx";
-import ListOfCities from "./Components/ListOfCitys";
+import ListOfCities from "./Components/ListOfCities";
 import React, { useState } from "react";
 import CityTile from "./Components/CityTile";
 import GKYplanetPicker from "./Functions/GKYplanetPicker";
@@ -12,7 +12,7 @@ function App() {
   const search = async (inputCity) => {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`
-    );
+    ).json();
 
     const { main, name, sys, weather } = response;
     console.log(response);
@@ -47,7 +47,7 @@ function App() {
         <SearchForm search={search} />
       </section>
       <br />
-      <ListOfCities cityList={cityList} />
+        <ListOfCities cityList={cityList} />
     </div>
   );
 }
