@@ -1,4 +1,4 @@
-// receives input city
+
 import "../CityTile.css";
 
 const CityTile = (props) => {
@@ -42,15 +42,16 @@ const CityTile = (props) => {
 };
 
 CityTile.defaultProps = {
-  cityName: "Im a city",
-  country: "US",
+  cityName: "No city",
+  country: "No Country",
   temp: null,
   humidity: null,
   currentCondition: "ᚢᚣᚤᚥ ᚨᚩᚪᚫᚬᚭᚮᚯ",
   weatherIcon: "https://openweathermap.org/img/wn/04d@2x.png",
-  gkyPlanetName: "planet planet face",
+  gkyPlanetName: "planet",
   gkyPlanetImg:
     "https://media.istockphoto.com/vectors/not-found-page-404-error-file-not-found-vector-id1139665574",
-  gkyPlanetQuip: "im a quip. puip puip psjfg djlghudi jfghfufhfsddfsdui",
+  gkyPlanetQuip: "m a quip. puip quip",
+  key: null,
 };
 export default CityTile;

@@ -3,20 +3,17 @@ import SearchButton from "./SearchButton";
 import "../SearchForm.css";
 import RunSearch from "../App";
 
-const SearchForm = ( ) => {
+const SearchForm = () => {
   const [inputSearchBox, setInputSearchBox] = useState(null);
 
   const handleChange = (event) => {
     setInputSearchBox(event.target.value);
-    console.log("value is:", event.target.value);
+    //console.log("value is:", event.target.value);
   };
 
-  const handleSearch = () => {
-    
-    console.log( inputSearchBox);
-    const newCity = RunSearch(inputSearchBox);
-
-  };
+  // const handleSearch = () => {
+  //   RunSearch(inputSearchBox);
+  // };
 
   return (
     <form className="search-form">
@@ -26,9 +23,9 @@ const SearchForm = ( ) => {
         onChange={handleChange}
         placeholder="Search for a city"
       />
-      <SearchButton handleSearch={handleSearch} />
+      <SearchButton RunSearch={RunSearch} />
     </form>
   );
-}
+};
 
-export default SearchForm
+export default SearchForm;

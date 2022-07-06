@@ -15,20 +15,10 @@ const CityTiles = (props) => {
         gkyPlanetName={CityTile.gkyPlanetName}
         gkyPlanetImg={CityTile.gkyPlanetImg}
         gkyPlanetQuip={CityTile.gkyPlanetQuip}
+        key={CityTile.cityName+CityTile.country}
       />
     </div>
   );
 };
 
 export default CityTiles;
-
-
-/*
-set
-cityName= name
-country= sys.country
-temp= main.temp
-humidity= main.humidity
-currentCondition= weather[0]["description"]
-weatherIcon= icon
-*/
