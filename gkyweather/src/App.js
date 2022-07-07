@@ -3,7 +3,7 @@ import SearchForm from "./Components/SearchForm.jsx";
 import ListOfCities from "./Components/ListOfCitys";
 import React, { useState } from "react";
 import CityTile from "./Components/CityTile";
-import {GKYplanetPicker} from "./Functions/GKYplanetPicker";
+import { GKYplanetPicker } from "./Functions/GKYplanetPicker";
 
 function App() {
   const [cityList, setCityList] = useState([]);
@@ -11,21 +11,13 @@ function App() {
 
   const search = async (inputCity) => {
     // let scrubbedInputCity;
-/*
-    async function fetchMoviesJSON() {
-      const response = await fetch("/movies");
-      const movies = await response.json();
-      return movies;
-    }
-*/
+
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}`
     );
-      const foundCity = await response.json()
-
-    console.log(`https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}`)
-    //console.log("DONE FETCHING");
+    const foundCity = await response.json();
     console.log(foundCity);
+
     const { main, name, sys, weather } = foundCity;
     const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
 
@@ -47,10 +39,7 @@ function App() {
         key={name + sys.country}
       />
     );
-
-    console.log("hi");
     setCityList([...cityList, newCity]);
-    
   };
 
   return (
