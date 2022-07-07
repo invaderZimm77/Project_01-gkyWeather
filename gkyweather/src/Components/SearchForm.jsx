@@ -7,7 +7,7 @@ const SearchForm = ({ search }) => {
 
   const handleChange = (event) => {
     setInputSearchBox(event.target.value);
-    console.log("value is:", event.target.value);
+    // console.log("value is:", event.target.value);
   };
   
 

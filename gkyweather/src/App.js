@@ -16,7 +16,7 @@ function App() {
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}`
     );
     const foundCity = await response.json();
-    console.log(foundCity);
+    // console.log(foundCity);
 
     const { main, name, sys, weather } = foundCity;
     const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
