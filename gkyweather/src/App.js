@@ -13,7 +13,7 @@ function App() {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&units=imperial&appid=${weatherAPIkey}&`
     );
-
+    console.log("DONE FETCHING")
     const { main, name, sys, weather } = response;
     console.log(response);
     const icon = `https://openweathermap.org/img/wn/${weather[0]["icon"]}@2x.png`;
