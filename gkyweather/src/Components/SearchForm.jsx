@@ -9,6 +9,7 @@ const SearchForm = ({ search }) => {
     setInputSearchBox(event.target.value);
     console.log("value is:", event.target.value);
   };
+  
 
   return (
     <form className="search-form">

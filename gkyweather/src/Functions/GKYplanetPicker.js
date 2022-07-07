@@ -1,4 +1,5 @@
-const GKYplanetPicker = (cityTemp, cityHumidity) => {
+
+export const GKYplanetPicker = (cityTemp, cityHumidity) => {
   const desertThresh = 45;
   let newPlanet = [];
 

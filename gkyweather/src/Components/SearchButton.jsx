@@ -2,7 +2,8 @@ export default function SearchButton({ handleClick }) {
   return (
     <button
       className="search-button"
-      onClick={() => {
+      onClick={(event) => {
+        event.preventDefault()
         console.log("Searching...");
         handleClick();
       }}
